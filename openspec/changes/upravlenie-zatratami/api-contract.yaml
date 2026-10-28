@@ -1,0 +1,335 @@
+﻿openapi: "3.1.0"
+info:
+  title: Cost Management API (1C HTTP Services)
+  version: "1.0.0"
+  description: >
+    Контракт HTTP-сервисов 1С для управления затратами участка.
+    В MVP не реализуется в полном объёме — используется как design-артефакт
+    для демонстрации инженерной зрелости и как ориентир для внешнего дашборда.
+    Базовые endpoints (создание плана/факта) — минимальный graduated approach.
+security:
+  - bearerAuth: []
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  schemas:
+    PlanRecord:
+      type: object
+      required: [site, article, period, amount]
+      properties:
+        site:
+          type: string
+          description: Код участка
+          example: "uchastok-1"
+        article:
+          type: string
+          enum: [fuel, materials, energy, labor]
+          example: "fuel"
+        period:
+          type: string
+          pattern: "^\\d{4}-\\d{2}$"
+          example: "2026-03"
+        amount:
+          type: number
+          exclusiveMinimum: 0
+          example: 100000
+    FactRecord:
+      type: object
+      required: [site, article, date, amount]
+      properties:
+        site:
+          type: string
+          example: "uchastok-1"
+        article:
+          type: string
+          enum: [fuel, materials, energy, labor]
+          example: "fuel"
+        date:
+          type: string
+          format: date
+          example: "2026-03-15"
+        quantity:
+          type: number
+          minimum: 0
+          example: 500
+        unit:
+          type: string
+          enum: [litr, kg, kwh, hour]
+          example: "litr"
+        amount:
+          type: number
+          exclusiveMinimum: 0
+          example: 25000
+    PlanFactResponse:
+      type: object
+      required: [site, period, items, total]
+      properties:
+        site:
+          type: string
+          example: "uchastok-1"
+        period:
+          type: string
+          example: "2026-03"
+        items:
+          type: array
+          items:
+            $ref: "#/components/schemas/PlanFactItem"
+        total:
+          $ref: "#/components/schemas/PlanFactItem"
+    PlanFactItem:
+      type: object
+      required: [article, plan, fact, deviation, deviationPercent]
+      properties:
+        article:
+          type: string
+          example: "fuel"
+        plan:
+          type: number
+          example: 100000
+        fact:
+          type: number
+          example: 115000
+        normative:
+          type: number
+          nullable: true
+          example: 105000
+          description: Норматив = норма × выпуск; null если норма не задана
+        deviation:
+          type: number
+          example: 15000
+          description: План − Факт
+        deviationPercent:
+          type: number
+          example: 15.0
+          description: Отклонение / План × 100; null если План = 0
+    ErrorResponse:
+      type: object
+      required: [error_code, message]
+      properties:
+        error_code:
+          type: string
+          example: "VALIDATION_ERROR"
+        message:
+          type: string
+          example: "Amount must be positive"
+        details:
+          type: object
+          additionalProperties:
+            type: array
+            items:
+              type: string
+paths:
+  /api/v1/costs/plan:
+    post:
+      summary: Создать плановую запись затрат
+      operationId: create_plan_record
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/PlanRecord"
+            examples:
+              default:
+                value:
+                  site: "uchastok-1"
+                  article: "fuel"
+                  period: "2026-03"
+                  amount: 100000
+      responses:
+        "201":
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PlanRecord"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden (роль не имеет права ввода плана)
+        "422":
+          description: Validation Error (amount <= 0, missing fields)
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "500":
+          description: Internal Server Error
+  /api/v1/costs/fact:
+    post:
+      summary: Создать фактическую запись затрат
+      operationId: create_fact_record
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/FactRecord"
+            examples:
+              default:
+                value:
+                  site: "uchastok-1"
+                  article: "fuel"
+                  date: "2026-03-15"
+                  quantity: 500
+                  unit: "litr"
+                  amount: 25000
+      responses:
+        "201":
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/FactRecord"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+        "409":
+          description: Conflict (дубликат: site+article+date+amount)
+        "422":
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "429":
+          description: Too Many Requests
+        "500":
+          description: Internal Server Error
+  /api/v1/costs/plan-fact:
+    get:
+      summary: Получить отчёт план-факт по участку за период
+      operationId: get_plan_fact
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: site
+          in: query
+          required: true
+          schema:
+            type: string
+          example: "uchastok-1"
+        - name: period
+          in: query
+          required: true
+          schema:
+            type: string
+            pattern: "^\\d{4}-\\d{2}$"
+          example: "2026-03"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PlanFactResponse"
+              examples:
+                default:
+                  value:
+                    site: "uchastok-1"
+                    period: "2026-03"
+                    items:
+                      - article: "fuel"
+                        plan: 100000
+                        fact: 115000
+                        normative: 105000
+                        deviation: 15000
+                        deviationPercent: 15.0
+                      - article: "materials"
+                        plan: 50000
+                        fact: 48000
+                        normative: 50000
+                        deviation: -2000
+                        deviationPercent: -4.0
+                    total:
+                      article: "TOTAL"
+                      plan: 150000
+                      fact: 163000
+                      deviation: 13000
+                      deviationPercent: 8.67
+        "400":
+          description: Bad Request (missing site/period)
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+        "404":
+          description: Site not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "500":
+          description: Internal Server Error
+  /api/v1/costs/dashboard:
+    get:
+      summary: Сводка для дашборда руководителя (план, факт, топ-3 перерасхода)
+      operationId: get_dashboard
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: site
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: period
+          in: query
+          required: true
+          schema:
+            type: string
+            pattern: "^\\d{4}-\\d{2}$"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  site:
+                    type: string
+                  period:
+                    type: string
+                  totalPlan:
+                    type: number
+                  totalFact:
+                    type: number
+                  totalDeviation:
+                    type: number
+                  topOverruns:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/PlanFactItem"
+        "400":
+          description: Bad Request
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+        "500":
+          description: Internal Server Error
