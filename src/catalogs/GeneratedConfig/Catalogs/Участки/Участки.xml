@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/webcolors" xmlns:win="http://v8.1c.ru/8.1/data/ui/windows" xmlns:xen="http://v8.1c.ru/8.3/humancode" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.14">
+<Catalog uuid="11111111-2222-3333-4444-555555555551">
+<InternalInfo>
+<xr:ContainedObject>
+<xr:ClassId>9f8ebf7b-c701-4f27-bda0-0f57c275116f</xr:ClassId>
+<xr:ObjectId>obj-11111111-2222-3333-4444-555555555551</xr:ObjectId>
+</xr:ContainedObject>
+<xr:ContainedObject>
+<xr:ClassId>3c43fc01-b900-4a81-942f-a6eeb11874d2</xr:ClassId>
+<xr:ObjectId>ref-11111111-2222-3333-4444-555555555551</xr:ObjectId>
+</xr:ContainedObject>
+<xr:ContainedObject>
+<xr:ClassId>8212e680-e852-4f36-b6b5-0c58a8a97561</xr:ClassId>
+<xr:ObjectId>srf-11111111-2222-3333-4444-555555555551</xr:ObjectId>
+</xr:ContainedObject>
+<xr:ContainedObject>
+<xr:ClassId>5715f83a-02b1-4c1e-affa-55ab40134b15</xr:ClassId>
+<xr:ObjectId>lst-11111111-2222-3333-4444-555555555551</xr:ObjectId>
+</xr:ContainedObject>
+<xr:ContainedObject>
+<xr:ClassId>00936f44-fcbe-4cb8-a539-844c219662c1</xr:ClassId>
+<xr:ObjectId>sel-11111111-2222-3333-4444-555555555551</xr:ObjectId>
+</xr:ContainedObject>
+<xr:ContainedObject>
+<xr:ClassId>5825227d-8158-46d5-bb50-3ec55106886e</xr:ClassId>
+<xr:ObjectId>fld-11111111-2222-3333-4444-555555555551</xr:ObjectId>
+</xr:ContainedObject>
+</InternalInfo>
+<Properties>
+<Name>Участки</Name>
+<Synonym>
+<v8:item>
+<v8:lang>ru</v8:lang>
+<v8:content>Участки</v8:content>
+</v8:item>
+</Synonym>
+<Comment></Comment>
+<Hierarchical>false</Hierarchical>
+<CodeLength>9</CodeLength>
+<DescriptionLength>25</DescriptionLength>
+<CodeType>String</CodeType>
+<CodeAllowedLength>Variable</CodeAllowedLength>
+</Properties>
+</Catalog>
+</MetaDataObject>

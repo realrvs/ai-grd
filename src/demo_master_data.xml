@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DemoData>
+	<!-- Демо-данные для справочников системы управления затратами -->
+	
+	<!-- Участок добычи -->
+	<Catalog name="Участки">
+		<Item>
+			<Code>00001</Code>
+			<Name>Участок добычи</Name>
+		</Item>
+	</Catalog>
+	
+	<!-- 4 статьи затрат -->
+	<Catalog name="СтатьиЗатрат">
+		<Item>
+			<Code>01</Code>
+			<Name>Топливо</Name>
+			<Type>Топливо</Type>
+		</Item>
+		<Item>
+			<Code>02</Code>
+			<Name>Материалы</Name>
+			<Type>Материалы</Type>
+		</Item>
+		<Item>
+			<Code>03</Code>
+			<Name>Электроэнергия</Name>
+			<Type>Электроэнергия</Type>
+		</Item>
+		<Item>
+			<Code>04</Code>
+			<Name>Оплата труда</Name>
+			<Type>Оплата труда</Type>
+		</Item>
+	</Catalog>
+	
+	<!-- Нормы расхода (по 2 статьям) -->
+	<Catalog name="НормыРасхода">
+		<Item>
+			<Site>Участок добычи</Site>
+			<Article>Топливо</Article>
+			<NormValue>1.50</NormValue>
+			<Unit>л/т</Unit>
+		</Item>
+		<Item>
+			<Site>Участок добычи</Site>
+			<Article>Материалы</Article>
+			<NormValue>0.30</NormValue>
+			<Unit>кг/т</Unit>
+		</Item>
+	</Catalog>
+	
+</DemoData>

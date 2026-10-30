@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ConfigDumpInfo xmlns="http://v8.1c.ru/8.3/xcf/dumpinfo" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" format="Hierarchical" version="2.20">
+	<ConfigVersions>
+		<Metadata name="Catalog.НормыРасхода" id="6581ea0d-1aa9-4fc1-9f03-b64ab985143e" configVersion="0e0ab71d43823d4bbd39353d8fb83d8a00000000">
+			<Metadata name="Catalog.НормыРасхода.Attribute.Участок" id="228c5c1e-6bcf-4876-8be1-5aca3e23fed2"/>
+			<Metadata name="Catalog.НормыРасхода.Attribute.Норма" id="d54b4a14-4fec-44fd-9571-d216e7e2b175"/>
+			<Metadata name="Catalog.НормыРасхода.Attribute.Статья" id="e30c2ffa-f6e6-47dd-ae92-1b4d864339ae"/>
+		</Metadata>
+		<Metadata name="Catalog.СтатьиЗатрат" id="10d41ea0-ca6f-4393-9689-4ada13c6b160" configVersion="a0d550e197a6be44b443e3869e276f6100000000">
+			<Metadata name="Catalog.СтатьиЗатрат.Attribute.Тип" id="4974a452-b81b-4fdd-b8e0-796eda70caa7"/>
+		</Metadata>
+		<Metadata name="Catalog.Участки" id="f7870c0e-23ad-4e00-9e9c-fe697b7d0dfd" configVersion="d49419d4abf9094e8bb83c7c87e02a7700000000"/>
+		<Metadata name="Configuration.Конфигурация" id="d277b480-642f-4346-8edd-7755ffba0d3c" configVersion="10934fe93a6f0248a8de9dfe4baa8b0300000000"/>
+		<Metadata name="Language.Русский" id="44bfd056-24ba-45a3-bba8-113bdbddcfaf" configVersion="a47b999540362d4889df8f422824482700000000"/>
+	</ConfigVersions>
+</ConfigDumpInfo>
