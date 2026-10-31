@@ -254,6 +254,7 @@
 			<Document>ФактЗатрат</Document>
 			<Document>ВыпускПродукции</Document>
 			<AccumulationRegister>Затраты</AccumulationRegister>
+			<AccumulationRegister>ВыпускПродукции</AccumulationRegister>
 		</ChildObjects>
 	</Configuration>
 </MetaDataObject>
