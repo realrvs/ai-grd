@@ -1,16 +1,50 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ConfigDumpInfo xmlns="http://v8.1c.ru/8.3/xcf/dumpinfo" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" format="Hierarchical" version="2.20">
 	<ConfigVersions>
+		<Metadata name="AccumulationRegister.Затраты" id="14bf8bdb-855b-46c0-b2c7-3fe2d38c2fd5" configVersion="6b9e64be7d20e7488dc6ef2f63e3f19700000000">
+			<Metadata name="AccumulationRegister.Затраты.Dimension.Статья" id="2f746632-3ae0-4251-a2ed-e5ea1678299d"/>
+			<Metadata name="AccumulationRegister.Затраты.Dimension.Тип" id="33e4a6f3-19ba-4c9d-b3c0-2afb93db3912"/>
+			<Metadata name="AccumulationRegister.Затраты.Resource.Сумма" id="7825373b-42cd-495e-ac14-9244881fad95"/>
+			<Metadata name="AccumulationRegister.Затраты.Resource.Количество" id="79c07d38-b42e-4b59-a839-3750f4d5c55b"/>
+			<Metadata name="AccumulationRegister.Затраты.Dimension.Участок" id="c695d8e3-0bf2-4fc6-8e39-45f43ba650f9"/>
+		</Metadata>
+		<Metadata name="Catalog.Номенклатура" id="caad486f-bc12-478c-b302-d27872784153" configVersion="702b3184efd4fe4585f40e7e2cef5def00000000"/>
 		<Metadata name="Catalog.НормыРасхода" id="6581ea0d-1aa9-4fc1-9f03-b64ab985143e" configVersion="0e0ab71d43823d4bbd39353d8fb83d8a00000000">
 			<Metadata name="Catalog.НормыРасхода.Attribute.Участок" id="228c5c1e-6bcf-4876-8be1-5aca3e23fed2"/>
 			<Metadata name="Catalog.НормыРасхода.Attribute.Норма" id="d54b4a14-4fec-44fd-9571-d216e7e2b175"/>
 			<Metadata name="Catalog.НормыРасхода.Attribute.Статья" id="e30c2ffa-f6e6-47dd-ae92-1b4d864339ae"/>
 		</Metadata>
+		<Metadata name="Catalog.Склады" id="4d572996-b29e-43aa-a493-e8030eff0e8e" configVersion="11fa227e412c01468725f0004916b92300000000"/>
 		<Metadata name="Catalog.СтатьиЗатрат" id="10d41ea0-ca6f-4393-9689-4ada13c6b160" configVersion="a0d550e197a6be44b443e3869e276f6100000000">
 			<Metadata name="Catalog.СтатьиЗатрат.Attribute.Тип" id="4974a452-b81b-4fdd-b8e0-796eda70caa7"/>
 		</Metadata>
 		<Metadata name="Catalog.Участки" id="f7870c0e-23ad-4e00-9e9c-fe697b7d0dfd" configVersion="d49419d4abf9094e8bb83c7c87e02a7700000000"/>
-		<Metadata name="Configuration.Конфигурация" id="d277b480-642f-4346-8edd-7755ffba0d3c" configVersion="10934fe93a6f0248a8de9dfe4baa8b0300000000"/>
+		<Metadata name="Configuration.Конфигурация" id="d277b480-642f-4346-8edd-7755ffba0d3c" configVersion="b890ea52e489574794abda6e3d86231300000000"/>
+		<Metadata name="Document.ВыпускПродукции" id="f53c8fb7-4908-4a06-898b-bb003fc9497a" configVersion="702e01045eee9742802f86c6a18c1b2e00000000">
+			<Metadata name="Document.ВыпускПродукции.Attribute.Участок" id="0c31cb92-1427-4925-bcf6-7e5c774d0419"/>
+			<Metadata name="Document.ВыпускПродукции.TabularSection.Продукция.Attribute.Сумма" id="1244fc09-2599-4a3d-99cb-b2668a4fd6d1"/>
+			<Metadata name="Document.ВыпускПродукции.TabularSection.Продукция" id="17daa3b3-8b66-4bcf-bea3-a295585bd383"/>
+			<Metadata name="Document.ВыпускПродукции.TabularSection.Продукция.Attribute.Количество" id="5a72362d-91b9-4631-99d8-624ff63d4086"/>
+			<Metadata name="Document.ВыпускПродукции.TabularSection.Продукция.Attribute.Склад" id="61b9210b-2516-418d-ac5f-6aa239e4379a"/>
+			<Metadata name="Document.ВыпускПродукции.TabularSection.Продукция.Attribute.Номенклатура" id="97e5b60f-4ba0-418c-9f72-3f7aebad05b2"/>
+			<Metadata name="Document.ВыпускПродукции.TabularSection.Продукция.Attribute.Цена" id="b614023b-ab8c-4bd3-9dc2-66b942f182fd"/>
+		</Metadata>
+		<Metadata name="Document.ПланЗатрат" id="fcdbe30b-0ed5-4645-9611-f78840bcd847" configVersion="7fb0b0aac8ac3d49bcc303a9618e444600000000">
+			<Metadata name="Document.ПланЗатрат.Attribute.Участок" id="2c616d85-7d21-4e16-9b1c-6655ffbf5eaf"/>
+			<Metadata name="Document.ПланЗатрат.TabularSection.Затраты.Attribute.Сумма" id="58d2c17c-b3f6-4fd9-89f3-8fc194cdf3e2"/>
+			<Metadata name="Document.ПланЗатрат.Attribute.Период" id="6cc26b25-3d2a-4308-a124-965281e85ee4"/>
+			<Metadata name="Document.ПланЗатрат.TabularSection.Затраты.Attribute.Статья" id="78593cc7-a46b-4c64-aa9a-8a46403ddd35"/>
+			<Metadata name="Document.ПланЗатрат.TabularSection.Затраты" id="b9a83c4e-81e4-4dfb-8834-991e8280f167"/>
+		</Metadata>
+		<Metadata name="Document.ПланЗатрат.ObjectModule" id="fcdbe30b-0ed5-4645-9611-f78840bcd847.0" configVersion="bb5a5740266e1b4084e8caf17282dc6400000000"/>
+		<Metadata name="Document.ФактЗатрат" id="42e67694-6716-45f0-8473-959b02a5cb65" configVersion="1d54883b25815c4e8de56b5ccbc6345f00000000">
+			<Metadata name="Document.ФактЗатрат.TabularSection.Затраты.Attribute.Сумма" id="457bbc6b-2dc1-4342-bf35-cd573ac507c7"/>
+			<Metadata name="Document.ФактЗатрат.Attribute.Участок" id="5fdf4fa1-f8f0-4764-97a5-8328046c8a03"/>
+			<Metadata name="Document.ФактЗатрат.TabularSection.Затраты.Attribute.Количество" id="789c4b24-2b26-4c6c-a658-15aac95ffb47"/>
+			<Metadata name="Document.ФактЗатрат.TabularSection.Затраты.Attribute.Статья" id="ef55c3f3-3567-47a2-bff1-5e11951d4b3a"/>
+			<Metadata name="Document.ФактЗатрат.TabularSection.Затраты" id="ff078f4f-f809-4de0-8d52-8b0543c91993"/>
+		</Metadata>
+		<Metadata name="Document.ФактЗатрат.ObjectModule" id="42e67694-6716-45f0-8473-959b02a5cb65.0" configVersion="fadbd60a42965949882cb8ae44f5ac3b00000000"/>
 		<Metadata name="Language.Русский" id="44bfd056-24ba-45a3-bba8-113bdbddcfaf" configVersion="a47b999540362d4889df8f422824482700000000"/>
 	</ConfigVersions>
 </ConfigDumpInfo>

@@ -248,6 +248,12 @@
 			<Catalog>Участки</Catalog>
 			<Catalog>СтатьиЗатрат</Catalog>
 			<Catalog>НормыРасхода</Catalog>
+			<Catalog>Номенклатура</Catalog>
+			<Catalog>Склады</Catalog>
+			<Document>ПланЗатрат</Document>
+			<Document>ФактЗатрат</Document>
+			<Document>ВыпускПродукции</Document>
+			<AccumulationRegister>Затраты</AccumulationRegister>
 		</ChildObjects>
 	</Configuration>
 </MetaDataObject>
