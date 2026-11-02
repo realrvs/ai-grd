@@ -245,6 +245,8 @@
 		</Properties>
 		<ChildObjects>
 			<Language>Русский</Language>
+			<Role>Администратор</Role>
+			<Role>РуководительУчастка</Role>
 			<Catalog>Участки</Catalog>
 			<Catalog>СтатьиЗатрат</Catalog>
 			<Catalog>НормыРасхода</Catalog>
