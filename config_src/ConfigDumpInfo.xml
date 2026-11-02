@@ -26,7 +26,7 @@
 			<Metadata name="Catalog.СтатьиЗатрат.Attribute.Тип" id="4974a452-b81b-4fdd-b8e0-796eda70caa7"/>
 		</Metadata>
 		<Metadata name="Catalog.Участки" id="f7870c0e-23ad-4e00-9e9c-fe697b7d0dfd" configVersion="d49419d4abf9094e8bb83c7c87e02a7700000000"/>
-		<Metadata name="Configuration.Конфигурация" id="d277b480-642f-4346-8edd-7755ffba0d3c" configVersion="464c2bc2147ea04f97eb50ad21fda6fd00000000"/>
+		<Metadata name="Configuration.Конфигурация" id="d277b480-642f-4346-8edd-7755ffba0d3c" configVersion="e6d7ef0f5d5e7f408309b81fb5cd288400000000"/>
 		<Metadata name="Document.ВыпускПродукции" id="f53c8fb7-4908-4a06-898b-bb003fc9497a" configVersion="b23b7facd858a84d91442dfda2d35bfb00000000">
 			<Metadata name="Document.ВыпускПродукции.Attribute.Участок" id="0c31cb92-1427-4925-bcf6-7e5c774d0419"/>
 			<Metadata name="Document.ВыпускПродукции.TabularSection.Продукция.Attribute.Сумма" id="1244fc09-2599-4a3d-99cb-b2668a4fd6d1"/>
@@ -54,6 +54,9 @@
 		</Metadata>
 		<Metadata name="Document.ФактЗатрат.ObjectModule" id="42e67694-6716-45f0-8473-959b02a5cb65.0" configVersion="b5f66da053092140a95f4aee902d5cf100000000"/>
 		<Metadata name="Language.Русский" id="44bfd056-24ba-45a3-bba8-113bdbddcfaf" configVersion="a47b999540362d4889df8f422824482700000000"/>
+		<Metadata name="Report.Дашборд" id="92cedc06-8f89-4c42-8c5c-39fd6121ec77" configVersion="2b287950c02301458505d15904d6432100000000"/>
+		<Metadata name="Report.Дашборд.Template.ОсновнаяСхемаКомпоновкиДанных" id="79d16cbe-e899-4fc3-bbfc-552353baadc5" configVersion="9c8170e098d6e348b7447afaade6db9600000000"/>
+		<Metadata name="Report.Дашборд.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="79d16cbe-e899-4fc3-bbfc-552353baadc5.0" configVersion="5362d9a7728ddd40b117dea849e02ff700000000"/>
 		<Metadata name="Report.ПланФакт" id="ac5cedf0-c17c-4158-bfdc-fe1cdbeab2b0" configVersion="5fd3c7d55db0b14b8b6c4b8a3af9f59b00000000"/>
 		<Metadata name="Report.ПланФакт.Form.ФормаОтчета" id="f0f2c77b-621e-4dca-b152-9dc4a481496d" configVersion="755434c88184ab428a88a90dda11dc5a00000000"/>
 		<Metadata name="Report.ПланФакт.Form.ФормаОтчета.Form" id="f0f2c77b-621e-4dca-b152-9dc4a481496d.0" configVersion="49e5ccc3c79f1147bad9cc82e63a9b9700000000"/>

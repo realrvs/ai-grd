@@ -254,6 +254,7 @@
 			<Document>ФактЗатрат</Document>
 			<Document>ВыпускПродукции</Document>
 			<Report>ПланФакт</Report>
+			<Report>Дашборд</Report>
 			<AccumulationRegister>Затраты</AccumulationRegister>
 			<AccumulationRegister>ВыпускПродукции</AccumulationRegister>
 		</ChildObjects>
