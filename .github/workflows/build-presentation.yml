@@ -1,0 +1,47 @@
+﻿name: Build Presentation PDF
+
+on:
+  push:
+    paths:
+      - 'PRESENTATION.md'
+  workflow_dispatch:
+
+jobs:
+  build-pdf:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install LaTeX
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y texlive-xetex texlive-fonts-recommended texlive-lang-cyrillic
+
+      - name: Generate PDF
+        uses: docker://pandoc/core:3.1
+        with:
+          args: >
+            PRESENTATION.md
+            -o PRESENTATION.pdf
+            --pdf-engine=xelatex
+            -V mainfont="DejaVu Sans"
+            -V geometry:margin=1.5cm
+            --toc
+            --number-sections
+            --metadata title="Система управления затратами"
+
+      - name: Upload PDF as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: presentation-pdf
+          path: PRESENTATION.pdf
+
+      - name: Commit PDF back to repo
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add PRESENTATION.pdf
+          git diff --quiet && git diff --staged --quiet || git commit -m "docs: автоматическая сборка PDF из PRESENTATION.md"
+          git push
