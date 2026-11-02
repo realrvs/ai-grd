@@ -253,6 +253,7 @@
 			<Document>ПланЗатрат</Document>
 			<Document>ФактЗатрат</Document>
 			<Document>ВыпускПродукции</Document>
+			<Report>ПланФакт</Report>
 			<AccumulationRegister>Затраты</AccumulationRegister>
 			<AccumulationRegister>ВыпускПродукции</AccumulationRegister>
 		</ChildObjects>
